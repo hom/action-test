@@ -16,4 +16,4 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
     - name: Deploy to cloud server
-      run: scp -r ./README.md root@39.105.149.19:~/
+      run: echo ${secrets.MENGJUNDEMBP_PRIVATE_KEY} | scp -i - -r ./README.md root@39.105.149.19:~/
