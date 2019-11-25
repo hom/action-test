@@ -17,7 +17,7 @@ jobs:
         echo test, and deploy your project.
     - name: Set cloud server config file
       env:
-        IDENTIFY_FILE: ${secrets.MENGJUNDEMBP_PRIVATE_KEY}
+        IDENTIFY_FILE: ${{secrets.MENGJUNDEMBP_PRIVATE_KEY}}
       run: |
         echo $IDENTIFY_FILE
     - name: Deploy to cloud server
