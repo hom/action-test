@@ -15,9 +15,5 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
-    - name: Setup cloud server
-      uses: hom/github-action-test@master
-      env:
-       ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
     - name: Deploy to cloud server
       run: scp -r ./README.md root@39.105.149.19:~/
