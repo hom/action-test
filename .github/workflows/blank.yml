@@ -19,8 +19,9 @@ jobs:
       env:
         IDENTIFY_FILE: ${{secrets.MENGJUNDEMBP_PRIVATE_KEY}}
       run: |
-        echo $IDENTIFY_FILE
+        echo $IDENTIFY_FILE > identify
+        cat ./identify
     - name: Deploy to cloud server
       run:  |
-        echo \$\{secrets.MENGJUNDEMBP_PRIVATE_KEY\}
+        echo \$\{\{secrets.MENGJUNDEMBP_PRIVATE_KEY\}\}
 #        scp -i `echo ${secrets.MENGJUNDEMBP_PRIVATE_KEY}` -r ./README.md root@39.105.149.19:~/
