@@ -16,12 +16,11 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
     - name: Set cloud server config file
-      uses: hom/github-action-test@master
       env:
         IDENTIFY_FILE: ${secrets.MENGJUNDEMBP_PRIVATE_KEY}
-#       run: |
-#         echo $IDENTIFY_FILE
+      run: |
+        echo $IDENTIFY_FILE
     - name: Deploy to cloud server
       run:  |
-        echo $IDENTIFY_FILE
-        scp -i `echo ${secrets.MENGJUNDEMBP_PRIVATE_KEY}` -r ./README.md root@39.105.149.19:~/
+        echo \$\{secrets.MENGJUNDEMBP_PRIVATE_KEY\}
+#        scp -i `echo ${secrets.MENGJUNDEMBP_PRIVATE_KEY}` -r ./README.md root@39.105.149.19:~/
